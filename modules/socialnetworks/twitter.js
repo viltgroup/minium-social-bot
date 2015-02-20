@@ -24,4 +24,4 @@ Twitter.prototype.tweet = function (msg) {
   tweetBtn.click();
 };
 
-module.exports = Facebook;
+module.exports = Twitter;

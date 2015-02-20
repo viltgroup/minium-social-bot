@@ -14,7 +14,6 @@ botbrowser.$(":root").configure()
   .defaultTimeout(20, timeUnits.SECONDS);
 
 var twitter = new Twitter(browser);
-
 twitter.login(credentials);
 
 // we'll use a bot to our first post message
