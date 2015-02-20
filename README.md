@@ -1,5 +1,5 @@
-<a href="url"><img src="http://viltgroup.github.io/minium/images/banner_minium.png" align="left" height="200" ></a>
-<a href="url"><img src="http://seium.org/sei_15_webpage/img/mascote.png" height="200" ></a>
+<a href="url"><img src="http://viltgroup.github.io/minium/images/banner_minium.png" align="left" height="100" ></a>
+<a href="url"><img src="http://seium.org/sei_15_webpage/img/mascote.png" height="100" ></a>
 
 
 Minium wants to have a social live!
