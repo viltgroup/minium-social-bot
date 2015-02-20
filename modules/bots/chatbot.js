@@ -15,17 +15,17 @@ ChatBot.prototype.lastMessage = function() {
     return lastLine ? /Eliza: (.*)/.exec(lastLine)[1] : null;
   };
   return this.lastEntry.apply(extractLastMessage);
-}
+};
 
 ChatBot.prototype.start = function() {
   this.submit.click();
   return this.lastMessage();
-}
+};
 
 ChatBot.prototype.reply = function(message) {
   this.input.fill(msg);
   this.submit.click();
   return this.lastMessage();
-}
+};
 
 module.exports = ChatBot;

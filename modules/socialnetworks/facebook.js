@@ -12,6 +12,6 @@ Facebook.prototype.login = function (opts) {
   emailFld.fill(opts.email);
   passwordFld.fill(opts.password);
   loginBtn.click();
-}
+};
 
 module.exports = Facebook;
