@@ -6,8 +6,6 @@ var timeUnits = require("minium/timeunits"),
     Facebook  = require("socialnetworks/facebook"),
     Twitter   = require("socialnetworks/twitter");
 
-credentials = { email : 'minium_vilt', password : 'liberty09' }
-
 var botbrowser = minium.newBrowser({
   desiredCapabilities : { browserName : "chrome" }
 });
