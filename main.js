@@ -12,6 +12,8 @@ var botbrowser = minium.newBrowser({
 
 botbrowser.$(":root").configure()
   .defaultTimeout(20, timeUnits.SECONDS);
+  
+  
 
 var twitter = new Twitter(browser);
 twitter.login(credentials);
@@ -24,4 +26,4 @@ var msg = bot.start();
 twitter.tweet(msg);
 
 $(":root").waitTime(5, timeUnits.SECONDS);
-browser.quit();
+botbrowser.quit();

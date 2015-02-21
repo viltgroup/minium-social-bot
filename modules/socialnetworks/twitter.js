@@ -4,7 +4,7 @@ function Twitter(browser) {
 }
 
 Twitter.prototype.login = function (opts) {
-  var emailFld     = $("#signin-email:focus");
+  var emailFld     = $("#signin-email");
   var passwordFld  = $("#signin-password");
   var keepLoginFld = $(".remember input");
   var loginBtn     = $(".js-submit");
