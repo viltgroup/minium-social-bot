@@ -5,7 +5,9 @@ var timeUnits = require("minium/timeunits"),
     CleverBot = require("bots/cleverbot"),
     Facebook  = require("socialnetworks/facebook"),
     Twitter   = require("socialnetworks/twitter");
-    
+
+credentials = { email : 'minium_vilt', password : 'liberty09' }
+
 var botbrowser = minium.newBrowser({
   desiredCapabilities : { browserName : "chrome" }
 });
@@ -22,3 +24,6 @@ var msg = bot.start();
 
 // and we tweet that message (pray for it to be harmless)
 twitter.tweet(msg);
+
+$(":root").waitTime(5, timeUnits.SECONDS);
+browser.quit();
