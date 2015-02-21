@@ -19,7 +19,7 @@ CleverBot.prototype.start = function() {
 };
 
 CleverBot.prototype.reply = function(message) {
-  this.input.fill(msg);
+  this.input.fill(message);
   this.submit.click();
   return this.lastMessage();
 };
