@@ -23,7 +23,7 @@ ChatBot.prototype.start = function() {
 };
 
 ChatBot.prototype.reply = function(message) {
-  this.input.fill(msg);
+  this.input.fill(message);
   this.submit.click();
   return this.lastMessage();
 };
