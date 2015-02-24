@@ -14,4 +14,4 @@ Facebook.prototype.login = function (opts) {
   loginBtn.click();
 };
 
-module.exports = Facebook;
+if (typeof module !== 'undefined') module.exports = Facebook;
