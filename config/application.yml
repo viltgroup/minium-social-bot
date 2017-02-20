@@ -1,0 +1,6 @@
+minium:
+  rhino:
+    module-paths: ./modules
+
+  config:
+    hello: world

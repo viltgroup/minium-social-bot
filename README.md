@@ -1,5 +1,5 @@
-<a href="url"><img src="http://viltgroup.github.io/minium/images/banner_minium.png" align="left" height="100" ></a>
-<a href="url"><img src="http://seium.org/sei_15_webpage/img/mascote.png" height="100" ></a>
+<a href="url"><img src="https://viltgroup.github.io/assets/images/minium_logo.png" align="left" height="100" ></a>
+<a href="url"><img src="https://www.sinfo.org/static/logo.png" height="100" ></a>
 
 Minium wants to have a social live!
 
@@ -14,7 +14,7 @@ Examples of what you can program Minium to do:
  * Pass Turing Test
  * In the best case scenario you can drive a "Social Media Manager" out of work !
 
-**Submission:** Submit your code, some screenshots or video of Minium in action is also a plus to the email minium@vilt-group.com with SEIUM as the subject. Don't forget to adde your details: name, student number and contact.
+**Submission:** Submit your code, some screenshots or video of Minium in action is also a plus to the email minium@vilt-group.com with `SINFO2017` as the subject. Don't forget to add your details: name, student number and contact.
 
 **Reward:** The reward for the most creative solution is a **Google Chromecast !**
 
@@ -22,28 +22,43 @@ Examples of what you can program Minium to do:
 
 *For more information take a look in http://minium.vilt.io.*
 
- * Download your platform [minium-tools-bundle-1.0.0-SNAPSHOT](http://sourceforge.net/projects/minium/files/minium-tools-1.0.0.SNAPSHOT/)
+First you need to run Minium Developer:
+
+ * Download your platform [minium-developer](https://github.com/viltgroup/minium-developer/releases)
  * Uncompress it into some directory (lets refer to it as `MINIUM_HOME`)
+ * Start minium-developer by running `$MINIUM_HOME/minium-developer.exe` (windows) or `$MINIUM_HOME/minium-developer` (linux / mac)
+
+Then clone `minium-social-bot` to use as base for your bot:
 
 ```bash
 git clone https://github.com/viltgroup/minium-social-bot
 ```
 
- * If you want to open **Minium Developer** and start editing scripts, run the following commands:
+Now open that project in Minium Developer:
 
-```bash
-cd minium-social-bot
-$MINIUM_HOME/bin/minium-developer
-```
- * Or if you just want to run it, use **Minium Automator** instead
+* Go to **Project > Open Project**
+* Set your `minium-social-bot` directory in **Project Directory** (e.g, `/home/me/my-projects/minium-social-bot`)
 
-```bash
-cd minium-social-bot
+You can now play with it:
 
-# Change to your values
-TWITTER_EMAIL=youremail@yourdomain.com
-TWITTER_PASSWORD=yourpassword
-$MINIUM_HOME/bin/minium-automator -d . "credentials = { email : '$TWITTER_EMAIL', password : '$TWITTER_PASSWORD' }"
+* First, evaluate the following code to declare a `credentials` variable (change `YOUR_TWITTER_EMAIL` and `YOUR_PASS` to reflect your twitter account details):
+
+```javascript
+credentials = { email: 'YOUR_TWITTER_EMAIL', password: 'YOUR_PASS' };
 ```
 
-This will open your Twitter account and use a Chat Bot to generate a message that Minium will use to send a tweet for you, so watch out :)
+* **Optional**: delete that line, it's better not to have your password visible
+* Copy and paste the following code, and evaluate it to create a tweet:
+
+```javascript
+// extends $
+require("utils/browser-utils");
+
+var Twitter = require("socialnetworks/twitter");
+
+var base = $(":root");
+var twitter = new Twitter(base, credentials);
+
+twitter.tweet("Minium can! http://minium.vilt.io");
+```
+

@@ -1,31 +1,38 @@
 var timeUnits = require("minium/timeunits"),
-    keys      = require("minium/keys"),
     // our modules
-    ChatBot   = require("bots/chatbot"),
     CleverBot = require("bots/cleverbot"),
-    Facebook  = require("socialnetworks/facebook"),
-    Twitter   = require("socialnetworks/twitter");
+    Twitter   = require("socialnetworks/twitter"),
+    later     = require("utils/later");
 
-browser.$(":root").configure()
+// extends $
+require("utils/browser-utils");
+
+browser.configure()
   .waitingPreset("fast")
-    .timeout(2, timeUnits.SECONDS);
+  .timeout(2, timeUnits.SECONDS);
 
-var botbrowser = minium.newBrowser({
-  desiredCapabilities : { browserName : "chrome" }
-});
-
-botbrowser.$(":root").configure()
-  .defaultTimeout(60, timeUnits.SECONDS);
+var base = $(":root");
+var botBase = base.openWindow(CleverBot.URL, "", "width=930,height=1030");
+var twitterBase = base;
 
 // we'll use a bot to help us talk
-var bot = new CleverBot(botbrowser);
-  
-var twitter = new Twitter(browser, bot);
-twitter.login(credentials);
+var bot = new CleverBot(botBase);
+var twitter = new Twitter(twitterBase, credentials);
 
-while (true) {
-  twitter.handleEvents();
+function replyGenerator(msg) {
+  return bot.reply(msg);
 }
 
-botbrowser.quit();
+twitter.addEvent({
+  name         : "Reply to Direct Message",
+  triggerElems : $(".global-dm-nav.with-count"),
+  handler      : function () {
+    twitter.replyToDirectMessage(replyGenerator);
+    base.waitTime(5, timeUnits.SECONDS);
+  }
+});
 
+twitter.handleEvents();
+
+// run this line to stop twitter event handling cycle:
+// twitter.stop();
