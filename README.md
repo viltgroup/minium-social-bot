@@ -14,9 +14,18 @@ Examples of what you can program Minium to do:
  * Pass Turing Test
  * In the best case scenario you can drive a "Social Media Manager" out of work !
 
-**Submission:** Submit your code, some screenshots or video of Minium in action is also a plus to the email minium@vilt-group.com with `SINFO2017` as the subject. Don't forget to add your details: name, student number and contact.
+## Submission
 
-**Reward:** The reward for the most creative solution is a **Google Chromecast !**
+Submit your code (github link or compressed file), some screenshots or video of Minium in action is also a plus to the email minium@vilt-group.com with `SINFO2017` as the subject. Don't forget to add your details: name, student number and contact.
+
+Limit date for code submissions is **26 February 2017**.
+
+## Reward
+
+The reward for the best solution is a **Google Chromecast**! We will evaluate:
+
+* Creativity
+* Good coding practices
 
 ## Getting Started
 
