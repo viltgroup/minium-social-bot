@@ -1,7 +1,7 @@
 <a href="url"><img src="https://viltgroup.github.io/assets/images/minium_logo.png" align="left" height="100" ></a>
 <a href="url"><img src="https://www.sinfo.org/static/logo.png" height="100" ></a>
 
-Minium wants to have a social live!
+Minium wants to have a social life!
 
 So you’ll have to teach him how to manage his social network, for instance, Facebook or Twitter.
 
