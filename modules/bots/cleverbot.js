@@ -1,20 +1,22 @@
 var timeUnits = require("minium/timeunits");
 
 // CleverBot (http://www.cleverbot.com/)
-function CleverBot(browser) {
-  var $          = browser.$;
+function CleverBot(base) {
+  this.base = base;
   
-  this.browser   = browser;
-  this.input     = $("#stimulus");
-  this.submit    = $("#sayit");
-  this.lastEntry = $("#typArea").has("#snipTextIcon").find("> span");
+  this.input = base.find(".stimulus");
+  this.submit = base.find(".sayitbutton");
+  this.lastEntry = base.find("#conversationcontainer p").has("#snipTextIcon").find("> .bot");
 }
 
+CleverBot.URL = "http://www.cleverbot.com/";
+
 CleverBot.prototype.ensurePage = function() {
-  if (this.browser.getCurrentUrl() != "http://www.cleverbot.com/") {
-    this.browser.get("http://www.cleverbot.com/");
+  var browser = this.base.browser();
+  if (browser.getCurrentUrl() != CleverBot.URL) {
+    browser.get("http://www.cleverbot.com/");
   }
-}
+};
 
 CleverBot.prototype.lastMessage = function() {
   this.ensurePage();
